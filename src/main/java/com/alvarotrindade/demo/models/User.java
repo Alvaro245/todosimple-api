@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import org.springframework.scheduling.config.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +40,8 @@ public class User {
    @Size(groups = {CreateUser.class, UpdateUser.class}, min = 8, max = 60)
    private String password;
 
-
-   // private List<Task> tasks = new ArrayList<Task>();
+   @OneToMany(mappedBy = "user")
+   private List<Task> tasks = new ArrayList<Task>();
 
 
     @Override
@@ -60,8 +59,6 @@ public class User {
         else if (!this.id.equals(other.id))
             return false;
         return Objects.equals(this.id, other.id) && Objects.equals(this.Username, other.Username) && Objects.equals(this.password, other.password);
-
-
     }
 
     @Override
@@ -70,7 +67,5 @@ public class User {
            int result = 1;
            result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
            return result;
-
-
     }
 }
