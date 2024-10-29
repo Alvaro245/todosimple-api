@@ -26,10 +26,18 @@ public class Task {
      @Size(min = 1, max = 255)
     private String description;
 
-    public Task(User user, long id, String description) {
+
+     @Column(name = "descricao", length = 225, nullable = false)
+     @NotEmpty
+     @NotNull
+     @Size(min = 1, max = 225)
+     private String descricao;
+
+    public Task(User user, long id, String description, String descricao) {
         this.user = user;
         this.id = id;
         this.description = description;
+        this.descricao = descricao;
     }
 
     public Task() {
