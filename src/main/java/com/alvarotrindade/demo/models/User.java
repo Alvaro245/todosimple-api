@@ -31,7 +31,7 @@ public class User {
     @NotEmpty (groups = CreateUser.class)
     @Size(groups = CreateUser.class,min = 2, max = 100)
 
-    private String Username;
+    private String username;
 
    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
    @Column(name = "password",   length = 60, nullable = false)
@@ -58,7 +58,7 @@ public class User {
                 return false;
         else if (!this.id.equals(other.id))
             return false;
-        return Objects.equals(this.id, other.id) && Objects.equals(this.Username, other.Username) && Objects.equals(this.password, other.password);
+        return Objects.equals(this.id, other.id) && Objects.equals(this.username, other.username) && Objects.equals(this.password, other.password);
     }
 
     @Override
