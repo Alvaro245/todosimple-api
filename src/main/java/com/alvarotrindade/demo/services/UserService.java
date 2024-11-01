@@ -1,7 +1,6 @@
-package com.alvarotrindade.demo.services.User;
+package com.alvarotrindade.demo.services;
 
 
-import aj.org.objectweb.asm.commons.TryCatchBlockSorter;
 import com.alvarotrindade.demo.models.User;
 import com.alvarotrindade.demo.repositories.TaskRepository;
 import com.alvarotrindade.demo.repositories.UserRepository;
@@ -11,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @org.springframework.stereotype.Service
-public class Service {
+public class UserService {
 
 
     @Autowired
