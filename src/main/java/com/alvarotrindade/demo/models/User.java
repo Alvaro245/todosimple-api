@@ -1,5 +1,6 @@
 package com.alvarotrindade.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
@@ -92,7 +93,7 @@ public class User {
     public void setPassword(@NotNull(groups = {CreateUser.class, UpdateUser.class}) @NotEmpty(groups = {CreateUser.class, UpdateUser.class}) @Size(groups = {CreateUser.class, UpdateUser.class}, min = 8, max = 60) String password) {
         this.password = password;
     }
-
+     @JsonIgnore
     public List<Task> getTasks() {
         return tasks;
     }
