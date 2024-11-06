@@ -66,5 +66,13 @@ public class Task {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public @NotEmpty @NotNull @Size(min = 1, max = 225) String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(@NotEmpty @NotNull @Size(min = 1, max = 225) String descricao) {
+        this.descricao = descricao;
+    }
 }
 
