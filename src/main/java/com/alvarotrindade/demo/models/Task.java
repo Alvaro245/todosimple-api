@@ -27,17 +27,12 @@ public class Task {
     private String description;
 
 
-     @Column(name = "descricao", length = 225, nullable = false)
-     @NotEmpty
-     @NotNull
-     @Size(min = 1, max = 225)
-     private String descricao;
 
-    public Task(User user, long id, String description, String descricao) {
+    public Task(User user, long id, String description) {
         this.user = user;
         this.id = id;
         this.description = description;
-        this.descricao = descricao;
+
     }
 
     public Task() {
@@ -67,12 +62,7 @@ public class Task {
         this.user = user;
     }
 
-    public @NotEmpty @NotNull @Size(min = 1, max = 225) String getDescricao() {
-        return descricao;
+
     }
 
-    public void setDescricao(@NotEmpty @NotNull @Size(min = 1, max = 225) String descricao) {
-        this.descricao = descricao;
-    }
-}
 

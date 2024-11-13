@@ -29,9 +29,6 @@ public class TaskController {
     }
 
 
-
-
-
     @PostMapping
     public ResponseEntity<Void> create(@Valid @RequestBody Task obj) {
         this.taskService.create(obj);
@@ -39,10 +36,6 @@ public class TaskController {
         return ResponseEntity.created(uri).build();
 
     }
-
-
-
-
 
 
     public ResponseEntity<Void> update(@Valid @RequestBody Task obj, @PathVariable Long id) {
